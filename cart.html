@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Magical Perfume Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo-avatar">
+                <img src="D:/dm website/assets/logo.jpg" alt="Logo" height="100px" width="100px">
+                <h1 id="title">Magical Perfume</h1>
+            </div>
+            <nav>
+                <ul id="access" style="list-style-type: none;">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="product-list">
+        <section class="product">
+            <div>
+                <img src="assets/bodyspray.jpg" height="200px" width="300px"/>
+                <h2>Body Spray</h2>
+                <p class="price">$29.99</p>
+                <p class="description">Experience the enchanting scent of fresh flowers with Floral Bliss perfume. Perfect for any occasion.</p>
+                <p class="offer">Special Offer: Buy 2, Get 1 Free!</p>
+                <button class="add-to-cart" onclick="addToCart('Body Spray', '29.99')">Add to Cart</button>
+            </div>
+
+            <div>
+                <img src="assets/bodyspray.jpg" height="200px" width="300px"/>
+                <h2>Perfume</h2>
+                <p class="price">$70</p>
+                <p class="description">Experience the enchanting scent of fresh flowers with Floral Bliss perfume. Perfect for any occasion.</p>
+                <p class="offer">Special Offer: Buy 2, Get 1 Free!</p>
+                <button class="add-to-cart" onclick="addToCart('Perfume', '70')">Add to Cart</button>
+            </div>
+
+            <div>
+                <img src="assets/bodyspray.jpg" height="200px" width="300px"/>
+                <h2>Car Spray</h2>
+                <p class="price">$49.99</p>
+                <p class="description">Experience the enchanting scent of fresh flowers with Floral Bliss perfume. Perfect for any occasion.</p>
+                <p class="offer">Special Offer: Buy 2, Get 1 Free!</p>
+                <button class="add-to-cart" onclick="addToCart('Car Spray', '49.99')">Add to Cart</button>
+            </div>
+        </section>
+        <!-- Include more product sections here -->
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <ul id="footer" style="list-style-type:none; padding: 0; margin: 0;">
+                    <li><a href="https://www.facebook.com/wwwperfumecom/"><img src="D:/dm website/assets/f.jfif" height="20px" width="20px"/>Facebook</a></li>
+                    <li><a href="https://twitter.com/theperfumeshop?lang=en"><img src="D:/dm website/assets/t.png" alt="Twitter" height="20px" width="20px">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/the_fragrance_heaven/"><img src="D:/dm website/assets/i.jpg" height="20px" width="20px">Instagram </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Magical Perfume Store</p>
+        </div>
+    </footer>
+    <script>
+        function addToCart(productName, price) {
+            const url = new URL('order.html', window.location.href);
+            url.searchParams.set('productName', productName);
+            url.searchParams.set('price', price);
+            window.location.href = url.href;
+        }
+    </script>
+    
+</body>
+</html>

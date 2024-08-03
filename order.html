@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Magical Perfume Store</title>
+    <link rel="icon" href=
+    "D:/dm website/assets/backgroundimage.jpg"
+              type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo-avatar">
+                <img src="D:/dm website/assets/logo.jpg" alt="Logo" height="100px" width="100px">
+                <h1 id="title">Magical Perfume</h1>
+            </div>
+            <nav>
+                <ul id="access" style="list-style-type: none;">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                   
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="order-details">
+            <h2>Order Details</h2>
+            <div id="product-details">
+                <!-- Product details will be displayed here dynamically -->
+            </div>
+            <button id="place-order" onclick="placeOrder()">Place Order</button>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <ul id="footer" style="list-style-type:none; padding: 0; margin: 0;">
+                    <li><a href="https://www.facebook.com/wwwperfumecom/"><img src="D:/dm website/assets/f.jfif" height="20px" width="20px"/>Facebook</a></li>
+                    <li><a href="https://twitter.com/theperfumeshop?lang=en"><img src="D:/dm website/assets/t.png" alt="Twitter" height="20px" width="20px">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/the_fragrance_heaven/"><img src="D:/dm website/assets/i.jpg" height="20px" width="20px">Instagram </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Magical Perfume Store</p>
+        </div>
+    </footer>
+    
+    <script>
+
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                productName: params.get('productName'),
+                price: params.get('price')
+            };
+        }
+
+        function displayProductDetails() {
+            const { productName, price } = getUrlParams();
+            const productDetails = document.getElementById('product-details');
+            productDetails.innerHTML = `
+                <p>Product Name: ${productName}</p>
+                <p>Price: $${price}</p>
+            `;
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!!Payment will be collected in cash upon delivery..');
+        }
+
+        window.onload = function() {
+            displayProductDetails();
+        };
+    </script>
+
+</body>
+</html>
